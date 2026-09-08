@@ -1,0 +1,12 @@
+.session_cookies.json
+.bearer.txt
+.venv/
+out/
+__pycache__/
+_*.py
+*.pyc
+_dev/
+.DS_Store
+*.log
+.env
+lib/account.local.json
