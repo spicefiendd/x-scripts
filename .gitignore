@@ -3,8 +3,6 @@
 .venv/
 out/
 __pycache__/
-_*.py
-*.pyc
 _dev/
 .DS_Store
 *.log
@@ -14,3 +12,5 @@ _dev/
 dist/
 build/
 .pytest_cache/
+*.pyc
+/_*.py
