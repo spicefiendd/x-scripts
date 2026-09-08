@@ -156,3 +156,21 @@ x-scripts/
   out/                 # JSON/text artifacts
   requirements.txt
 ```
+
+## `xdesk` CLI (packaged)
+
+Trusted read-only entrypoint wrapping these helpers:
+
+```bash
+cd /workspace/x-scripts
+python3 -m venv .venv && .venv/bin/pip install -e .
+.venv/bin/xdesk trends
+.venv/bin/xdesk why "Zelda" --count 5
+.venv/bin/xdesk analytics --days 4
+.venv/bin/xdesk digest
+.venv/bin/xdesk refresh-session
+.venv/bin/xdesk repair-queryids
+```
+
+Still GET-only. Account IDs in gitignored `xdesk/lib/account.local.json` (see `.example`).
+

@@ -1,0 +1,18 @@
+{
+  "bearer_note": "Public web client bearer (not a secret). Refreshed from main.*.js if needed.",
+  "graphql": {
+    "GenericTimelineById": "FwpimKioPG-7TypoTW9xjA",
+    "ExplorePage": "dQxpTm8KMi6bSqjQ7siytg",
+    "accountOverviewDailyQuery": "_P1caq0YB4SVuEtFLPDMfQ",
+    "contentPageQuery": "eyqFN-MJHrF7Aq4O5aFBpQ",
+    "SearchTimeline": "rQJxS-tMPRhLH6O5EJ9OJQ"
+  },
+  "trending_timeline_id": "VGltZWxpbmU6DAC2CwABAAAACHRyZW5kaW5nAAA=",
+  "cdp_ports": {
+    "chrome-profile-6": 9228,
+    "chrome-profile-2": 9224,
+    "chrome-profile-4": 9226
+  },
+  "preferred_profile": "/home/box/chrome-profile-6",
+  "preferred_cdp_port": 9228
+}
