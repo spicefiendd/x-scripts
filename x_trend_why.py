@@ -16,7 +16,6 @@ import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
-from urllib.parse import quote
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from lib.cdp_capture import (  # noqa: E402

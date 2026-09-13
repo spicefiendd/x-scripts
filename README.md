@@ -91,17 +91,20 @@ Outputs land in `out/` e.g.:
 All `GET https://x.com/i/api/graphql/{queryId}/{Operation}` with session cookies +
 public web `Authorization: Bearer …` + `x-csrf-token: <ct0>`.
 
-| Operation | queryId (see `lib/endpoints.json`) | Purpose |
-|---|---|---|
-| `GenericTimelineById` | `ee4dBLWL8a8qg6n19m1htQ` | US trending list (`timelineId` = trending) |
-| `accountOverviewDailyQuery` | `_P1caq0YB4SVuEtFLPDMfQ` | 7d/28d overview time series, follows |
-| `contentPageQuery` | `eyqFN-MJHrF7Aq4O5aFBpQ` | Top posts + organic metrics |
-| `ExplorePage` | `jo4rJIWiO5pQlMk6FYphZQ` | Explore hub (captured; trending uses GenericTimeline) |
+| Operation | Purpose |
+|---|---|
+| `GenericTimelineById` | US trending list (`timelineId` = trending) |
+| `accountOverviewDailyQuery` | 7d/28d overview time series, follows |
+| `contentPageQuery` | Top posts + organic metrics |
+| `ExplorePage` | Explore hub (captured; trending uses GenericTimeline) |
+| `SearchTimeline` | Search Top/Latest (via CDP capture in `x_trend_why`) |
+
+Live `queryId`s live in `lib/endpoints.json` (and `xdesk/lib/endpoints.json`) — they rotate; do not hardcode them. Run `repair_queryids.py` when captures start failing.
 
 Feature flags: `lib/features.json` (copied from live Chrome 151 client).  
 Account IDs live in gitignored `lib/account.local.json` (see `account.local.json.example`) — never commit them.
 
-`x_search.py` uses `SearchTimeline` GraphQL (`hyPfJYJ_XAtDYoslQc-Rgg`) via plain requests. It often requires a live `x-client-transaction-id` and may 404 — treat as experimental.
+`x_search.py` uses `SearchTimeline` GraphQL (queryId from `lib/endpoints.json`) via plain requests. It often requires a live `x-client-transaction-id` and may 404 — treat as experimental.
 
 **`x_trend_why.py`** is the supported “why trending” path: it CDP-navigates
 `https://x.com/search?q=…&f=top` on **chrome-profile-6 port 9228**, captures the
@@ -153,6 +156,7 @@ x-scripts/
   lib/cdp_capture.py   # CDP navigate + Network capture (tab hygiene)
   lib/endpoints.json
   lib/features.json
+  xdesk/               # packaged CLI; mirrors lib/ under xdesk/lib/
   out/                 # JSON/text artifacts
   requirements.txt
 ```

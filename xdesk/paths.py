@@ -3,6 +3,6 @@ from __future__ import annotations
 
 from pathlib import Path
 
-# /workspace/x-desk-client
+# /workspace/x-scripts
 ROOT = Path(__file__).resolve().parent.parent
 OUT_DIR = ROOT / "out"

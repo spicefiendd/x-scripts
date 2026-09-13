@@ -23,7 +23,7 @@ import urllib.request
 from pathlib import Path
 from typing import Any
 
-ROOT = Path(__file__).resolve().parents[2]  # /workspace/x-desk-client
+ROOT = Path(__file__).resolve().parents[2]  # /workspace/x-scripts
 COOKIES_PATH = Path(os.environ.get("X_SESSION_COOKIES", ROOT / ".session_cookies.json"))
 BEARER_PATH = Path(os.environ.get("X_BEARER_FILE", ROOT / ".bearer.txt"))
 ENDPOINTS_PATH = Path(__file__).resolve().parent / "endpoints.json"
