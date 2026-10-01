@@ -1,11 +1,11 @@
 {
   "bearer_note": "Public web client bearer (not a secret). Refreshed from main.*.js if needed.",
   "graphql": {
-    "GenericTimelineById": "FwpimKioPG-7TypoTW9xjA",
-    "ExplorePage": "dQxpTm8KMi6bSqjQ7siytg",
+    "GenericTimelineById": "6KKcBTcCsVtXvAx4aFDzRQ",
+    "ExplorePage": "7JBlImZfRkZIptknshoqCA",
     "accountOverviewDailyQuery": "_P1caq0YB4SVuEtFLPDMfQ",
     "contentPageQuery": "eyqFN-MJHrF7Aq4O5aFBpQ",
-    "SearchTimeline": "rQJxS-tMPRhLH6O5EJ9OJQ"
+    "SearchTimeline": "auLkqtmHqYEpRvflfvLhyQ"
   },
   "trending_timeline_id": "VGltZWxpbmU6DAC2CwABAAAACHRyZW5kaW5nAAA=",
   "cdp_ports": {
@@ -14,5 +14,7 @@
     "chrome-profile-4": 9226
   },
   "preferred_profile": "/home/box/chrome-profile-6",
-  "preferred_cdp_port": 9228
+  "preferred_cdp_port": 9228,
+  "user_rest_id": "1882263595515355136",
+  "screen_name": "spicefiendd"
 }
