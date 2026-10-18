@@ -1,0 +1,9 @@
+{
+  "user_rest_id": "<your_user_id>",
+  "screen_name": "<your_handle>",
+  "preferred_profile": "<path/to/chrome-profile>",
+  "preferred_cdp_port": 9222,
+  "cdp_ports": {
+    "default": 9222
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "bearer_note": "Public web client bearer (not a secret). Refreshed from main.*.js if needed.",
+  "graphql": {
+    "GenericTimelineById": "6KKcBTcCsVtXvAx4aFDzRQ",
+    "ExplorePage": "7JBlImZfRkZIptknshoqCA",
+    "accountOverviewDailyQuery": "_P1caq0YB4SVuEtFLPDMfQ",
+    "contentPageQuery": "eyqFN-MJHrF7Aq4O5aFBpQ",
+    "SearchTimeline": "auLkqtmHqYEpRvflfvLhyQ"
+  },
+  "trending_timeline_id": "VGltZWxpbmU6DAC2CwABAAAACHRyZW5kaW5nAAA="
+}
