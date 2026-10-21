@@ -27,11 +27,9 @@ COOKIES_PATH = Path(os.environ.get("X_SESSION_COOKIES", ROOT / ".session_cookies
 BEARER_PATH = Path(os.environ.get("X_BEARER_FILE", ROOT / ".bearer.txt"))
 ENDPOINTS_PATH = Path(__file__).resolve().parent / "endpoints.json"
 
-# Public web-client bearer (same for all X web users). Safe to ship; not a user secret.
-DEFAULT_BEARER = (
-    "REDACTED_X_WEB_BEARER_PART1"
-    "REDACTED_X_WEB_BEARER_PART2"
-)
+# X web-client bearer. Not hardcoded: read from $X_WEB_BEARER, else from the
+# gitignored .bearer.txt at the repo root (override path with $X_BEARER_FILE).
+BEARER_ENV = "X_WEB_BEARER"
 
 INTERESTING = ("auth_token", "ct0", "twid", "kdt", "guest_id", "personalization_id", "lang")
 
@@ -88,11 +86,19 @@ def get_account() -> dict[str, str]:
 
 
 def get_bearer() -> str:
+    """Return the X web-client bearer from $X_WEB_BEARER or the gitignored bearer file."""
+    env = os.environ.get(BEARER_ENV, "").strip()
+    if env:
+        return env
     if BEARER_PATH.exists():
         b = BEARER_PATH.read_text().strip()
         if b:
             return b
-    return DEFAULT_BEARER
+    raise RuntimeError(
+        f"No X web bearer configured. Set ${BEARER_ENV}, or put the bearer on one line in "
+        f"{BEARER_PATH} (gitignored; chmod 600). It is the public web-client bearer "
+        "embedded in x.com's main.*.js."
+    )
 
 
 def _redact(val: str) -> str:

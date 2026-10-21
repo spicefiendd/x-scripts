@@ -45,7 +45,8 @@ running X-desk profile (do not print full secrets):
 Writes `.session_cookies.json` created mode 0600 from the start (temp file + atomic rename) (`auth_token`, `ct0`, …).  
 Public web bearer lives in `.bearer.txt` (not a user secret).
 
-Env overrides: `X_CDP_PORT`, `X_SESSION_COOKIES`, `X_BEARER_FILE`.
+Env overrides: `X_CDP_PORT`, `X_SESSION_COOKIES`, `X_BEARER_FILE`, `X_WEB_BEARER`
+(bearer value itself; otherwise read from gitignored `.bearer.txt`, error if neither is set).
 
 ## Run commands
 
